@@ -1,7 +1,7 @@
 # Xcode
 #
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
-
+.this_is_apikey
 ## Build generated
 build/
 DerivedData/
