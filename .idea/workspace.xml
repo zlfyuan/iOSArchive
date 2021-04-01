@@ -1,7 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="571741e5-7186-410d-984b-654b1e402983" name="Default Changelist" comment="" />
+    <list default="true" id="571741e5-7186-410d-984b-654b1e402983" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.this_is_apikey" beforeDir="false" afterPath="$PROJECT_DIR$/.this_is_apikey" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/lib/_bisect.cpython-37m-darwin.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/lib/_blake2.cpython-37m-darwin.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/lib/_bz2.cpython-37m-darwin.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/lib/_codecs_cn.cpython-37m-darwin.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/lib/_codecs_hk.cpython-37m-darwin.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/lib/_codecs_iso2022.cpython-37m-darwin.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/lib/_codecs_jp.cpython-37m-darwin.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/lib/_codecs_kr.cpython-37m-darwin.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/lib/_codecs_tw.cpython-37m-darwin.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/lib/_datetime.cpython-37m-darwin.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/lib/_hashlib.cpython-37m-darwin.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/lib/_heapq.cpython-37m-darwin.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/lib/_json.cpython-37m-darwin.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/lib/_lzma.cpython-37m-darwin.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/lib/_md5.cpython-37m-darwin.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/lib/_multibytecodec.cpython-37m-darwin.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/lib/_opcode.cpython-37m-darwin.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/lib/_pickle.cpython-37m-darwin.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/lib/_posixsubprocess.cpython-37m-darwin.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/lib/_random.cpython-37m-darwin.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/lib/_scproxy.cpython-37m-darwin.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/lib/_sha1.cpython-37m-darwin.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/lib/_sha256.cpython-37m-darwin.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/lib/_sha3.cpython-37m-darwin.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/lib/_sha512.cpython-37m-darwin.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/lib/_socket.cpython-37m-darwin.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/lib/_ssl.cpython-37m-darwin.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/lib/_struct.cpython-37m-darwin.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/lib/binascii.cpython-37m-darwin.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/lib/certifi/cacert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/lib/distutils/README" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/lib/distutils/command/command_template" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/lib/distutils/tests/Setup.sample" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/lib/distutils/tests/includetest.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/lib/distutils/tests/xxmodule.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/lib/distutils/unixccompiler.py-e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/lib/email/architecture.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/lib/grp.cpython-37m-darwin.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/lib/library.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/lib/math.cpython-37m-darwin.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/lib/pydoc_data/_pydoc.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/lib/pyexpat.cpython-37m-darwin.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/lib/readline.cpython-37m-darwin.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/lib/select.cpython-37m-darwin.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/lib/termios.cpython-37m-darwin.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/lib/unicodedata.cpython-37m-darwin.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/lib/zlib.cpython-37m-darwin.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/libcrypto.1.1.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/liblzma.5.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/libreadline.8.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/libssl.1.1.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/libtinfow.6.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/libz.1.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/pgydb" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -108,7 +165,7 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="$USER_HOME$/anaconda3/envs/py3/bin/python" />
+      <option name="SDK_HOME" value="$USER_HOME$/anaconda3/envs/iosArchive/bin/python" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -123,6 +180,12 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.meizi" />
+      <item itemvalue="Python.pgy_login" />
+      <item itemvalue="Python.pgydb" />
+      <item itemvalue="Python.Test" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.pgydb" />
@@ -161,6 +224,7 @@
       <workItem from="1617069464605" duration="6122000" />
       <workItem from="1617085658711" duration="5881000" />
       <workItem from="1617092808304" duration="243000" />
+      <workItem from="1617244989416" duration="1696000" />
     </task>
     <servers />
   </component>
@@ -177,6 +241,6 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/iOSArchive$pgydb.coverage" NAME="pgydb Coverage Results" MODIFIED="1617092817031" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/iOSArchive$pgydb.coverage" NAME="pgydb Coverage Results" MODIFIED="1617245122141" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
