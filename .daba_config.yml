@@ -1,0 +1,10 @@
+# conf.yml
+pgy:
+ api_key: ~
+ user_key: ~
+weChart:
+ web_hook: ~
+dingTalk:
+ web_hook: ~
+email:
+  - xxxx@qq.com
