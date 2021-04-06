@@ -1,4 +1,5 @@
 import os
+import sys
 import requests
 import json
 import getpass
@@ -7,16 +8,18 @@ from bs4 import BeautifulSoup
 from yamlPare import Yaml
 
 class Pgy:
-    # 获取apikey
     def get_api_key(self):
         _yaml = Yaml()
         object = _yaml.readValue()
-        pgy = object["pgy"]
-        api_key = pgy["api_key"]
-        if api_key == None or len(api_key) != 32:
+        if object == None:
             return self.pgy_api(self.login())[1]
         else:
-            return api_key
+            if not "api_key" in object:
+                api_key = object["api_key"]
+                return api_key
+            else:
+                return self.pgy_api(self.login())[1]
+
 
     # 登录蒲公英
     def login(self):
@@ -58,12 +61,9 @@ class Pgy:
         # print('api_key \t' + api_key)
         # print('user_key \t' + user_key)
         _yaml = Yaml()
-        object = _yaml.readValue()
-        pgy = object["pgy"]
-        pgy["api_key"] = api_key
-        pgy["user_key"] = user_key
-        object["pay"] = pgy
-        _yaml.saveConfig(object)
+        pgy = {"api_key": str(api_key), "user_key": str(user_key)}
+        # print(pgy)
+        _yaml.saveConfig(pgy)
 
         return user_key, api_key
 
@@ -129,8 +129,11 @@ class Pgy:
 
 
 if __name__ == "__main__":
+    # sys.setrecursionlimit(100000)
     pgy = Pgy()
-
-    json_content = pgy.getCurrentAppDetail()
-
-    print(json_content)
+    # pgy.pgy_api(pgy.login())
+    pgy.get_api_key()
+    #
+    # json_content = pgy.getCurrentAppDetail()
+    #
+    # print(json_content)

@@ -2,30 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="571741e5-7186-410d-984b-654b1e402983" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.daba_config.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/pgydb/_cffi_backend.cpython-37m-darwin.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/pgydb/cryptography-3.4.7-py3.7.egg-info/INSTALLER" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/pgydb/cryptography-3.4.7-py3.7.egg-info/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/pgydb/cryptography-3.4.7-py3.7.egg-info/LICENSE.APACHE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/pgydb/cryptography-3.4.7-py3.7.egg-info/LICENSE.BSD" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/pgydb/cryptography-3.4.7-py3.7.egg-info/LICENSE.PSF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/pgydb/cryptography-3.4.7-py3.7.egg-info/METADATA" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/pgydb/cryptography-3.4.7-py3.7.egg-info/RECORD" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/pgydb/cryptography-3.4.7-py3.7.egg-info/WHEEL" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/pgydb/cryptography-3.4.7-py3.7.egg-info/top_level.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/pgydb/cryptography/hazmat/bindings/_openssl.abi3.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/pgydb/yaml/_yaml.cpython-37m-darwin.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pgy.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/send_dingtalk.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/send_email.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/send_wechart.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yamlPare.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.this_is_apikey" beforeDir="false" afterPath="$PROJECT_DIR$/dist/pgydb/cryptography-3.4.7-py3.7.egg-info/REQUESTED" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/pgydb/pgydb" beforeDir="false" afterPath="$PROJECT_DIR$/dist/pgydb/pgydb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pgy.py" beforeDir="false" afterPath="$PROJECT_DIR$/pgy.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pgydb.py" beforeDir="false" afterPath="$PROJECT_DIR$/pgydb.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/send_wechart.py" beforeDir="false" afterPath="$PROJECT_DIR$/send_wechart.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yamlPare.py" beforeDir="false" afterPath="$PROJECT_DIR$/yamlPare.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,13 +38,15 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.yamlPare">
+  <component name="RunManager" selected="Python.pgy">
     <configuration name="Test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="P_test" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -182,9 +166,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.pgy" />
         <item itemvalue="Python.yamlPare" />
         <item itemvalue="Python.pgydb" />
-        <item itemvalue="Python.pgy" />
         <item itemvalue="Python.Test" />
         <item itemvalue="Python.meizi" />
       </list>
@@ -220,7 +204,10 @@
       <workItem from="1617085658711" duration="5881000" />
       <workItem from="1617092808304" duration="243000" />
       <workItem from="1617244989416" duration="11225000" />
-      <workItem from="1617348962734" duration="3901000" />
+      <workItem from="1617348962734" duration="7461000" />
+      <workItem from="1617681637608" duration="6031000" />
+      <workItem from="1617695589396" duration="590000" />
+      <workItem from="1617702999211" duration="44000" />
     </task>
     <servers />
   </component>
@@ -240,8 +227,9 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/iOSArchive$pgy.coverage" NAME="pgy Coverage Results" MODIFIED="1617257412570" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/iOSArchive$pgy.coverage" NAME="pgy Coverage Results" MODIFIED="1617694100088" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/iOSArchive$pgydb.coverage" NAME="pgydb Coverage Results" MODIFIED="1617264323543" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/iOSArchive$yaml.coverage" NAME="yamlPare Coverage Results" MODIFIED="1617354708541" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/iOSArchive$yaml.coverage" NAME="yamlPare Coverage Results" MODIFIED="1617357110452" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/iOSArchive$yamlPare.coverage" NAME="yamlPare Coverage Results" MODIFIED="1617693259277" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

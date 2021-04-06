@@ -14,8 +14,6 @@ from send_email import SendEmail
 # 4。上传ipa到蒲公英 （添加进度条）
 # 5。通知测试用户
 home_path = os.path.expandvars('$HOME')
-conf_path = home_path + "/.dabao.yml"
-# .daba_config.yml
 def get_app_path():
     project_name = sys.argv[1]
     derive_data = home_path + "/Library/Developer/Xcode/DerivedData/"
@@ -65,6 +63,9 @@ def bulidIPA(app_path):
     return pack_bag_path
 
 if __name__ == '__main__':
+
+    sys.setrecursionlimit(100000)
+
     app_path = get_app_path()
 
     update_des = input("请输入更新的日志描述:")

@@ -18,6 +18,13 @@ web_hook = ""
 
 # 发送到企业微信
 def sendToWeixin(weburl, app_detail):
+    _yaml = Yaml()
+    object = _yaml.readValue()
+    pgy = object
+    weChart = {"web_hook":weburl}
+    o = {"pgy": object, "weChart": weChart}
+    _yaml.saveConfig(o)
+
     jsonContent = app_detail
     sizeStr = jsonContent['buildFileSize']
     size = float(sizeStr) / 1024 / 1024
