@@ -21,7 +21,7 @@ def sendToWeixin(weburl, app_detail):
     _yaml = Yaml()
     object = _yaml.readValue()
     pgy = object
-    weChart = {"web_hook":weburl}
+    weChart = {"web_hook": weburl}
     o = {"pgy": object, "weChart": weChart}
     _yaml.saveConfig(o)
 
@@ -43,7 +43,9 @@ def sendToWeixin(weburl, app_detail):
                     "title": jsonContent['buildName'],
                     "description": description,
                     "url": download_url_path,
-                    "picurl": 'https://appicon.pgyer.com/image/view/app_icons/' + jsonContent['buildIcon']
+                    "picurl": 'https://www.pgyer.com/image/view/app_icons/e067c6edb0ebcbf3fa55b17c31d2077e' +
+                              jsonContent[
+                                  'buildIcon'],
                 }
             ]
         }
@@ -69,14 +71,16 @@ def sendToWeixin(weburl, app_detail):
 class SendWeixin:
 
     def __init__(self):
-        conf = Yaml().readValue()
-        web_hook = conf["weChart"]["web_hook"]
-        if web_hook == None and len(web_hook) == 0:
-            web_hook = input("第一次请输入WebHook地址")
-            current_app_detail = Pgy().getCurrentAppDetai()
-            sendToWeixin(web_hook, current_app_detail)
+        try:
+            raise ValueError("❌无法获取到企业微信机器人地址,请检查配置文件.dabao_config.yml 是否正确")
+            _yaml = Yaml()
+            object = _yaml.readValue()
+            web_hook = object["weChart"]["web_hook"]
+            current_app_detail = Pgy().get_current_app_detail()
+            sendToDingTalk(web_hook, current_app_detail)
+        except ValueError as e:
+            print(e)
 
 
 if __name__ == '__main__':
-    current_app_detail = Pgy().getCurrentAppDetai()
-    sendWeixin(web_hook, current_app_detail)
+    SendWeixin()

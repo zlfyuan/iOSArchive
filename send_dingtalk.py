@@ -28,7 +28,8 @@ def sendToDingTalk(weburl, app_detail):
         "link": {
             "text": description,
             "title": jsonContent['buildName'],
-            "picUrl": 'https://appicon.pgyer.com/image/view/app_icons/' + jsonContent['buildIcon'],
+            "picUrl": 'https://www.pgyer.com/image/view/app_icons/e067c6edb0ebcbf3fa55b17c31d2077e' + jsonContent[
+                'buildIcon'],
             "messageUrl": download_url_path
         }
     }
@@ -49,14 +50,20 @@ def sendToDingTalk(weburl, app_detail):
     else:
         print(rp['errmsg'])
 
+
 class SendDingTalk:
 
     def __init__(self):
-        web_hook = input("第一次请输入钉钉WebHook地址")
-        if len(web_hook) != 0:
-            current_app_detail = Pgy().getCurrentAppDetai()
+        try:
+            raise ValueError("❌无法获取到钉钉机器人地址,请检查配置文件.dabao_config.yml 是否正确")
+            _yaml = Yaml()
+            object = _yaml.readValue()
+            web_hook = object["dingTalk"]["web_hook"]
+            current_app_detail = Pgy().get_current_app_detail()
             sendToDingTalk(web_hook, current_app_detail)
+        except ValueError as e:
+            print(e)
+
 
 if __name__ == '__main__':
-    current_app_detail = Pgy().getCurrentAppDetai()
-    sendWeixin(web_hook, current_app_detail)
+    SendDingTalk()

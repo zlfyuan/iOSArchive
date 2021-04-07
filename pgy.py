@@ -9,16 +9,28 @@ from yamlPare import Yaml
 
 class Pgy:
     def get_api_key(self):
-        _yaml = Yaml()
-        object = _yaml.readValue()
-        if object == None:
-            return self.pgy_api(self.login())[1]
-        else:
-            if not "api_key" in object:
-                api_key = object["api_key"]
-                return api_key
-            else:
-                return self.pgy_api(self.login())[1]
+        try:
+            raise ValueError("❌无法获取到api_key,请检查配置文件.dabao_config.yml 是否正确")
+            _yaml = Yaml()
+            object = _yaml.readValue()
+            api_key = object["pgy"]["api_key"]
+            return api_key
+        except ValueError as e:
+            print(e)
+        # if object == None:
+        #     raise ValueError{
+        #
+        #     }
+        #     print("请检查你的配置文件")
+        #     sys.exit()
+        #     # return self.pgy_api(self.login())[1]
+        # else:
+
+            # if not "api_key" in object:
+            #     api_key = object["api_key"]
+            #     return api_key
+            # else:
+            #     return self.pgy_api(self.login())[1]
 
 
     # 登录蒲公英
@@ -98,7 +110,7 @@ class Pgy:
             raise Exception("\n没有找到iap包...")
 
     # 获取app信息
-    def getCurrentAppDetail(self):
+    def get_current_app_detail(self):
         api_key = self.get_api_key()
         # 获取所有app
         app_list = requests.post('https://www.pgyer.com/apiv2/app/listMy',
@@ -129,11 +141,4 @@ class Pgy:
 
 
 if __name__ == "__main__":
-    # sys.setrecursionlimit(100000)
-    pgy = Pgy()
-    # pgy.pgy_api(pgy.login())
-    pgy.get_api_key()
-    #
-    # json_content = pgy.getCurrentAppDetail()
-    #
-    # print(json_content)
+    Pgy().get_api_key()
