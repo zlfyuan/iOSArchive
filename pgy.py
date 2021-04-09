@@ -17,6 +17,7 @@ class Pgy:
             return api_key
         except ValueError as e:
             print(e)
+            sys.exit()
         # if object == None:
         #     raise ValueError{
         #

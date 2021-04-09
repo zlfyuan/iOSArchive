@@ -3,20 +3,24 @@
 import os
 import sys
 import subprocess
+import argparse as apa
 
 from pgy import Pgy
 from send_wechart import SendWeixin
 from send_dingtalk import SendDingTalk
 from send_email import SendEmail
+
 # 1。获得app路径
 # 2。生成ipa包
 # 3。登录蒲公英得到 key （保存key到文件）
 # 4。上传ipa到蒲公英 （添加进度条）
 # 5。通知测试用户
 home_path = os.path.expandvars('$HOME')
-def get_app_path():
-    project_name = sys.argv[1]
-    derive_data = home_path + "/Library/Developer/Xcode/DerivedData/"
+
+
+def get_app_path(project):
+    project_name = project
+    derive_data = home_path + "/Library/Developer/Xcode/DerivedData"
     print(derive_data)
     if not os.path.exists(derive_data):
         print("找不到DerivedData文件 -->没有安装Xcode 或者 重启Xcode")
@@ -62,34 +66,37 @@ def bulidIPA(app_path):
     subprocess.call(["rm", "-rf", "./Payload"])
     return pack_bag_path
 
-if __name__ == '__main__':
-
-    sys.setrecursionlimit(100000)
-
-    app_path = get_app_path()
-
+def projectName(name):
+    app_path = get_app_path(name)
     update_des = input("请输入更新的日志描述:")
-
     ipa_path = bulidIPA(app_path) + "/Payload.ipa"
-
     pgy = Pgy()
-
     pgy.uploadIPA(ipa_path, update_des)
 
-    send_type = input("1.是否发送到企业微信?\n"
-                      "2.是否发送到钉钉群?\n"
-                      "3.是否发送到邮箱？\n\n"
-                      "请选择对应类型的数字 Enter结束")
-    if send_type == "1":
-        sendWeixin()
-    elif send_type == "2":
-        sendDingTalk()
-    elif send_type == "3":
-        sendEmail()
-    else:
-        print("输入错误...")
-        sys.exit()
+
+def sendToTester(sender):
+    try:
+        raise ValueError("❌缺少参数，查看--help")
+        if sender == "weixin":
+            SendWeixin()
+        elif sender == "dingTalk":
+            SendDingTalk()
+        elif sender == "email":
+            SendEmail()
+        else:
+            raise ValueError("❌参数错误")
+    except ValueError as e:
+        print(e)
 
 
+def showVersion(version):
+    print("version:{0}".format(version))
 
 
+if __name__ == '__main__':
+    parser = apa.ArgumentParser(prog="pgydb")  # 设定命令信息，用于输出帮助信息
+    parser.add_argument("-n", "--name", required=False)
+    parser.add_argument("-s", "--send", required=False)
+    args = parser.parse_args()
+    projectName(args.name)
+    sendToTester(args.send)
