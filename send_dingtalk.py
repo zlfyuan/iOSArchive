@@ -24,12 +24,13 @@ def sendToDingTalk(weburl, app_detail):
     download_url_path = open_url_path
     picUrl = 'https://www.pgyer.com/image/view/app_icons/' + jsonContent[
                 'buildIcon'],
+    title = "请点击我测试\n 懒人易健"
     # 发送到钉钉群
     news = {
         "msgtype": "link",
         "link": {
             "text": description,
-            "title": jsonContent['buildName'],
+            "title": title,
             "picUrl": picUrl,
             "messageUrl": download_url_path
         }

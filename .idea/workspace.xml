@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="571741e5-7186-410d-984b-654b1e402983" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/pgydb" beforeDir="false" afterPath="$PROJECT_DIR$/dist/pgydb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pgy.py" beforeDir="false" afterPath="$PROJECT_DIR$/pgy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pgydb.py" beforeDir="false" afterPath="$PROJECT_DIR$/pgydb.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/send_dingtalk.py" beforeDir="false" afterPath="$PROJECT_DIR$/send_dingtalk.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/send_wechart.py" beforeDir="false" afterPath="$PROJECT_DIR$/send_wechart.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -221,7 +217,7 @@
       <workItem from="1617850752701" duration="3254000" />
       <workItem from="1617948589966" duration="4683000" />
       <workItem from="1617960744944" duration="6000" />
-      <workItem from="1618198046130" duration="2667000" />
+      <workItem from="1618198046130" duration="3159000" />
     </task>
     <servers />
   </component>
