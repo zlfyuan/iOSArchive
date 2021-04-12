@@ -72,14 +72,13 @@ class SendWeixin:
 
     def __init__(self):
         try:
-            raise ValueError("❌无法获取到企业微信机器人地址,请检查配置文件.dabao_config.yml 是否正确")
             _yaml = Yaml()
             object = _yaml.readValue()
             web_hook = object["weChart"]["web_hook"]
             current_app_detail = Pgy().get_current_app_detail()
-            sendToDingTalk(web_hook, current_app_detail)
+            sendToWeixin(web_hook, current_app_detail)
         except ValueError as e:
-            print(e)
+            print("❌无法获取到企业微信机器人地址,请检查配置文件.dabao_config.yml 是否正确")
 
 
 if __name__ == '__main__':

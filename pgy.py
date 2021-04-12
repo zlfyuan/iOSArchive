@@ -10,13 +10,12 @@ from yamlPare import Yaml
 class Pgy:
     def get_api_key(self):
         try:
-            raise ValueError("❌无法获取到api_key,请检查配置文件.dabao_config.yml 是否正确")
             _yaml = Yaml()
             object = _yaml.readValue()
             api_key = object["pgy"]["api_key"]
             return api_key
-        except ValueError as e:
-            print(e)
+        except IOError:
+            print("❌无法获取到api_key,请检查配置文件.dabao_config.yml 是否正确")
             sys.exit()
         # if object == None:
         #     raise ValueError{

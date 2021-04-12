@@ -7,7 +7,7 @@ import os
 import requests
 
 from pgy import Pgy
-
+from yamlPare import Yaml
 # 机器人地址
 web_hook = ""
 
@@ -22,20 +22,36 @@ def sendToDingTalk(weburl, app_detail):
                                                                    jsonContent['buildUpdated'])
     open_url_path = 'https://www.pgyer.com/' + jsonContent['buildShortcutUrl']
     download_url_path = open_url_path
+    picUrl = 'https://www.pgyer.com/image/view/app_icons/' + jsonContent[
+                'buildIcon'],
     # 发送到钉钉群
     news = {
         "msgtype": "link",
         "link": {
             "text": description,
             "title": jsonContent['buildName'],
-            "picUrl": 'https://www.pgyer.com/image/view/app_icons/e067c6edb0ebcbf3fa55b17c31d2077e' + jsonContent[
-                'buildIcon'],
+            "picUrl": picUrl,
             "messageUrl": download_url_path
         }
     }
+    _news = {
+    "msgtype": "actionCard",
+    "actionCard": {
+        "title": jsonContent['buildName'],
+        "text": "![screenshot]({0}) \n\n #### {1} \n\n {2}".format(picUrl,jsonContent['buildName'],description),
+        "hideAvatar": "0",
+        "btnOrientation": "0",
+        "btns": [
+            {
+                "title": "点击进入测试",
+                "actionURL": open_url_path
+            }
+        ]
+    }
+}
     # print(download_url_path)
     url = weburl
-    data = news
+    data = _news
     h = {
         'Content-Type': 'application/json'
     }
@@ -54,15 +70,11 @@ def sendToDingTalk(weburl, app_detail):
 class SendDingTalk:
 
     def __init__(self):
-        try:
-            raise ValueError("❌无法获取到钉钉机器人地址,请检查配置文件.dabao_config.yml 是否正确")
-            _yaml = Yaml()
-            object = _yaml.readValue()
-            web_hook = object["dingTalk"]["web_hook"]
-            current_app_detail = Pgy().get_current_app_detail()
-            sendToDingTalk(web_hook, current_app_detail)
-        except ValueError as e:
-            print(e)
+        _yaml = Yaml()
+        object = _yaml.readValue()
+        web_hook = object["dingTalk"]["web_hook"]
+        current_app_detail = Pgy().get_current_app_detail()
+        sendToDingTalk(web_hook, current_app_detail)
 
 
 if __name__ == '__main__':

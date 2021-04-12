@@ -76,7 +76,6 @@ def projectName(name):
 
 def sendToTester(sender):
     try:
-        raise ValueError("❌缺少参数，查看--help")
         if sender == "weixin":
             SendWeixin()
         elif sender == "dingTalk":
@@ -84,7 +83,7 @@ def sendToTester(sender):
         elif sender == "email":
             SendEmail()
         else:
-            raise ValueError("❌参数错误")
+            raise ValueError("❌缺少参数，查看--help")
     except ValueError as e:
         print(e)
 
