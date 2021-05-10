@@ -7,7 +7,7 @@ import os
 import requests
 
 from pgy import Pgy
-from yamlPare import Yaml
+from config import ARCConfig, TargetSection
 
 # 更新描述
 updatades = '版本更新了'
@@ -18,13 +18,6 @@ web_hook = ""
 
 # 发送到企业微信
 def sendToWeixin(weburl, app_detail):
-    _yaml = Yaml()
-    object = _yaml.readValue()
-    pgy = object
-    weChart = {"web_hook": weburl}
-    o = {"pgy": object, "weChart": weChart}
-    _yaml.saveConfig(o)
-
     jsonContent = app_detail
     sizeStr = jsonContent['buildFileSize']
     size = float(sizeStr) / 1024 / 1024
@@ -63,23 +56,26 @@ def sendToWeixin(weburl, app_detail):
     rp = json.loads(r.text)
     # print(rp)
     if rp['errcode'] == 0:
-        print('转发到企业微信-->成功')
+        print('发送成功')
+        return True
     else:
         print(rp['errmsg'])
+        return False
 
 
 class SendWeixin:
 
     def __init__(self):
         try:
-            _yaml = Yaml()
-            object = _yaml.readValue()
-            web_hook = object["weChart"]["web_hook"]
+            hook = ARCConfig.getConfig(TargetSection, "weChat_hook")
             current_app_detail = Pgy().get_current_app_detail()
-            sendToWeixin(web_hook, current_app_detail)
-        except ValueError as e:
-            print("❌无法获取到企业微信机器人地址,请检查配置文件.dabao_config.yml 是否正确")
-
+            sendToWeixin(hook, current_app_detail)
+        except:
+            print("❌无法获取到机器人地址！！！")
+            hook = input("请重新输入:")
+            current_app_detail = Pgy().get_current_app_detail()
+            if sendToWeixin(hook, current_app_detail) == True:
+                ARCConfig.saveConfig(TargetSection, "weChat_hook", hook)
 
 if __name__ == '__main__':
     SendWeixin()

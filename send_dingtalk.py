@@ -5,9 +5,8 @@ import unidecode
 import json
 import os
 import requests
-
+from config import ARCConfig, TargetSection
 from pgy import Pgy
-from yamlPare import Yaml
 # 机器人地址
 web_hook = ""
 
@@ -50,7 +49,7 @@ def sendToDingTalk(weburl, app_detail):
         ]
     }
 }
-    # print(download_url_path)
+    print(download_url_path)
     url = weburl
     data = _news
     h = {
@@ -63,19 +62,27 @@ def sendToDingTalk(weburl, app_detail):
     rp = json.loads(r.text)
     # print(rp)
     if rp['errcode'] == 0:
-        print('\n转发到钉钉群-->成功...')
+        print('发送成功')
+        return True
     else:
         print(rp['errmsg'])
+        return False
 
 
 class SendDingTalk:
 
     def __init__(self):
-        _yaml = Yaml()
-        object = _yaml.readValue()
-        web_hook = object["dingTalk"]["web_hook"]
-        current_app_detail = Pgy().get_current_app_detail()
-        sendToDingTalk(web_hook, current_app_detail)
+        try:
+            hook = ARCConfig.getConfig(TargetSection, "dingTalk_hook")
+            current_app_detail = Pgy().get_current_app_detail()
+            sendToDingTalk(hook, current_app_detail)
+        except:
+            print("❌无法获取到机器人地址！！！")
+            hook = input("请重新输入:")
+            current_app_detail = Pgy().get_current_app_detail()
+            if sendToDingTalk(hook, current_app_detail) == True:
+                ARCConfig.saveConfig(TargetSection, "dingTalk_hook", hook)
+            pass
 
 
 if __name__ == '__main__':

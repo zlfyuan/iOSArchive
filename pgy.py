@@ -4,34 +4,16 @@ import requests
 import json
 import getpass
 from bs4 import BeautifulSoup
-
-from yamlPare import Yaml
+from config import ARCConfig, pgySection
 
 class Pgy:
     def get_api_key(self):
         try:
-            _yaml = Yaml()
-            object = _yaml.readValue()
-            api_key = object["pgy"]["api_key"]
+            api_key = ARCConfig.getConfig(pgySection, "api_key")
             return api_key
-        except IOError:
-            print("❌无法获取到api_key,请检查配置文件.dabao_config.yml 是否正确")
-            sys.exit()
-        # if object == None:
-        #     raise ValueError{
-        #
-        #     }
-        #     print("请检查你的配置文件")
-        #     sys.exit()
-        #     # return self.pgy_api(self.login())[1]
-        # else:
-
-            # if not "api_key" in object:
-            #     api_key = object["api_key"]
-            #     return api_key
-            # else:
-            #     return self.pgy_api(self.login())[1]
-
+        except:
+            print("❌无法获取到api_key,请重新登录")
+            return self.pgy_api(self.login())[1]
 
     # 登录蒲公英
     def login(self):
@@ -72,10 +54,9 @@ class Pgy:
                 user_key = n.contents[0]
         # print('api_key \t' + api_key)
         # print('user_key \t' + user_key)
-        _yaml = Yaml()
-        pgy = {"api_key": str(api_key), "user_key": str(user_key)}
-        # print(pgy)
-        _yaml.saveConfig(pgy)
+
+        ARCConfig.saveConfig(pgySection, "api_key", str(api_key))
+        ARCConfig.saveConfig(pgySection, "user_key", str(user_key))
 
         return user_key, api_key
 
@@ -133,10 +114,10 @@ class Pgy:
         json_data = json.loads(pgy.text)
         if code == 0:
             json_content = json_data['data']
-            print("\n获取app详情成功...")
+            # print("\n获取app详情成功...")
             return json_content
         else:
-            print('获取app详情失败')
+            # print('获取app详情失败')
             return
 
 
