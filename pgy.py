@@ -10,6 +10,8 @@ class Pgy:
     def get_api_key(self):
         try:
             api_key = ARCConfig.getConfig(pgySection, "api_key")
+            if api_key == None:
+                return self.pgy_api(self.login())[1]
             return api_key
         except:
             print("❌无法获取到api_key,请重新登录")
@@ -110,8 +112,8 @@ class Pgy:
                     'appKey': app_key}
         pgy = requests.post("https://www.pgyer.com/apiv2/app/view",
                             data=pgy_data)
-        # print(pgy.text)
         json_data = json.loads(pgy.text)
+        # print(json_data)
         if code == 0:
             json_content = json_data['data']
             # print("\n获取app详情成功...")

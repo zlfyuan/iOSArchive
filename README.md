@@ -3,21 +3,18 @@
 ### 使用
 ⚠️ 不能用模拟器编译
 
-编辑配置文件
+ 手动编辑配置文件 
+在用户目录生成配置文件
 ```shell
--> ~: vi .dabao_config.yml
+-> ~: vi .dabao_config.ini
 ```
-```yaml
-# conf.yml
-pgy:
- api_key: svew32232 #蒲公英apikey
- user_key: w232 #蒲公英userkey
-weChart:
- web_hook: https://xxxxx #企业微信机器人地址
-dingTalk:
- web_hook: https://xxxxx #钉钉机器人地址
-email:
-  - xxx@163.com #邮箱
+```ini
+[pgySection] 
+api_key = xxx
+user_key = xxx
+
+[TargetSection] 
+wechat_hook = xxx
 ```
 打包上传
 ```shell

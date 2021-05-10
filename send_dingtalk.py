@@ -21,8 +21,7 @@ def sendToDingTalk(weburl, app_detail):
                                                                    jsonContent['buildUpdated'])
     open_url_path = 'https://www.pgyer.com/' + jsonContent['buildShortcutUrl']
     download_url_path = open_url_path
-    picUrl = 'https://www.pgyer.com/image/view/app_icons/' + jsonContent[
-                'buildIcon'],
+    picUrl = jsonContent['iconUrl']
     title = "请点击我测试\n 懒人易健"
     # 发送到钉钉群
     news = {

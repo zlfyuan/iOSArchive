@@ -36,14 +36,11 @@ def sendToWeixin(weburl, app_detail):
                     "title": jsonContent['buildName'],
                     "description": description,
                     "url": download_url_path,
-                    "picurl": 'https://www.pgyer.com/image/view/app_icons/e067c6edb0ebcbf3fa55b17c31d2077e' +
-                              jsonContent[
-                                  'buildIcon'],
+                    "picurl": jsonContent['iconUrl']
                 }
             ]
         }
     }
-    print(download_url_path)
     url = weburl
     data = news
     h = {
@@ -56,6 +53,7 @@ def sendToWeixin(weburl, app_detail):
     rp = json.loads(r.text)
     # print(rp)
     if rp['errcode'] == 0:
+        print(download_url_path)
         print('发送成功')
         return True
     else:
