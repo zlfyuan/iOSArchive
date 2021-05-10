@@ -18,11 +18,11 @@ wechat_hook = xxx
 ```
 打包上传
 ```shell
--> ~: pgydb --name project 
+-> ~: i_archive -db project 
 ```
 通知测试
 ```shell
--> ~: pgydb --send weixin
--> ~: pgydb --send dingTalk
--> ~: pgydb --send email
+-> ~: i_archive -sd weixin
+-> ~: i_archive -sd dingTalk
+-> ~: i_archive -sd email
 ```

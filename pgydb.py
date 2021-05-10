@@ -75,6 +75,7 @@ def projectName(name):
 
 
 def sendToTester(sender):
+    # print(sender)
     try:
         if sender == "weixin":
             SendWeixin()
@@ -93,9 +94,30 @@ def showVersion(version):
 
 
 if __name__ == '__main__':
-    parser = apa.ArgumentParser(prog="pgydb")  # 设定命令信息，用于输出帮助信息
-    parser.add_argument("-n", "--name", required=False)
-    parser.add_argument("-s", "--send", required=False)
-    args = parser.parse_args()
-    projectName(args.name)
-    sendToTester(args.send)
+
+    args = apa.ArgumentParser(prog="i_archive", description='iOS Application archive command tools', epilog='Information end ')
+    #必要参数
+    args.add_argument("-db",'--dabao', type=str, dest="db", default=None, help="你的项目Target")
+
+    args.add_argument("-sd", '--send', type=str, dest="send_target", help=u"发送目标，例如钉钉机器人:dingTalk,企业微信机器人:WeCaht")
+
+    args = args.parse_args()
+    # print("argparse.args=", args, type(args))
+    # print("name = {0}".format(args.name))
+    d = args.__dict__
+    # print(d)
+    if not "db" in d or d["db"] == None:
+        # print("无效项目Target")
+        pass
+    else:
+        projectName(d["db"])
+        # print("db",d["db"])
+        # pass
+
+    if d["send_target"] == None:
+        # print("无效的发送目标")
+        pass
+    else:
+        sendToTester(d["send_target"])
+        # print("send", d["send_target"])
+        # pass
