@@ -18,11 +18,11 @@ wechat_hook = xxx
 ```
 打包上传
 ```shell
--> ~: i_archive -db project 
+-> ~: iarchive -db project 
 ```
 通知测试
 ```shell
--> ~: i_archive -sd weixin
--> ~: i_archive -sd dingTalk
--> ~: i_archive -sd email
+-> ~: iarchive -sd weixin
+-> ~: iarchive -sd dingTalk
+-> ~: iarchive -sd email
 ```

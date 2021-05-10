@@ -84,7 +84,7 @@ def sendToTester(sender):
         elif sender == "email":
             SendEmail()
         else:
-            raise ValueError("❌缺少参数，查看--help")
+            raise ValueError("缺少参数|参数错误，查看--help")
     except ValueError as e:
         print(e)
 
@@ -95,11 +95,11 @@ def showVersion(version):
 
 if __name__ == '__main__':
 
-    args = apa.ArgumentParser(prog="i_archive", description='iOS Application archive command tools', epilog='Information end ')
+    args = apa.ArgumentParser(prog="iarchive", description='iOS Application archive command tools', epilog='Information end ')
     #必要参数
     args.add_argument("-db",'--dabao', type=str, dest="db", default=None, help="你的项目Target")
 
-    args.add_argument("-sd", '--send', type=str, dest="send_target", help=u"发送目标，例如钉钉机器人:dingTalk,企业微信机器人:WeCaht")
+    args.add_argument("-sd", '--send', type=str, dest="send_target", help=u"发送目标，例如钉钉机器人:dingTalk,企业微信机器人:weixin")
 
     args = args.parse_args()
     # print("argparse.args=", args, type(args))
