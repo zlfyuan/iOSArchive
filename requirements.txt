@@ -17,5 +17,5 @@ six==1.15.0
 soupsieve==2.2.1
 typing-extensions==3.7.4.3
 Unidecode==1.2.0
-urllib3==1.26.4
+urllib3==1.26.5
 zipp==3.4.1
