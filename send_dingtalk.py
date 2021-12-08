@@ -7,47 +7,41 @@ import os
 import requests
 from config import ARCConfig, TargetSection
 from pgy import Pgy
+
 # 机器人地址
 web_hook = ""
+
 
 # 发送到钉钉
 def sendToDingTalk(weburl, app_detail):
     jsonContent = app_detail
     sizeStr = jsonContent['buildFileSize']
-    size = float(sizeStr) / 1024 / 1024
-    description = '版本：{} (build {})  大小：{:.2f} MB 更新时间 ：{}'.format(jsonContent['buildVersion'],
-                                                                   jsonContent['buildBuildVersion'],
-                                                                   size,
-                                                                   jsonContent['buildUpdated'])
+    _size = float(sizeStr) / 1024 / 1024
+    version = '版本：{} (build {})'.format(jsonContent['buildVersion'], jsonContent['buildBuildVersion'])
+    size = "大小：{:.2f} MB".format(_size)
+    update_time = "更新时间 ：{}".format(jsonContent['buildUpdated'])
     open_url_path = 'https://www.pgyer.com/' + jsonContent['buildShortcutUrl']
     download_url_path = open_url_path
-    picUrl = jsonContent['iconUrl']
-    title = "请点击我测试\n 懒人易健"
-    # 发送到钉钉群
-    news = {
-        "msgtype": "link",
-        "link": {
-            "text": description,
-            "title": title,
-            "picUrl": picUrl,
-            "messageUrl": download_url_path
+    picUrl = jsonContent['buildQRCodeURL']
+    title = "请点击我测试\n{0}".format(jsonContent["buildName"])
+
+    updateDes = input("此次更新内容：\n")
+    _updateDes = "此次更新内容：" + updateDes
+    _news = {
+        "msgtype": "markdown",
+        "markdown": {
+            "title": "测试包下载",
+            "text": "# {0} \n ### {1} \n ### {2} \n ### {3} \n ### {4} \n > ![screenshot]({5}) \n\n > [直接下载]({6}) \n".format(
+                jsonContent["buildName"],
+                version,
+                size,
+                update_time,
+                _updateDes,
+                picUrl,
+                download_url_path)
         }
     }
-    _news = {
-    "msgtype": "actionCard",
-    "actionCard": {
-        "title": jsonContent['buildName'],
-        "text": "![screenshot]({0}) \n\n #### {1} \n\n {2}".format(picUrl,jsonContent['buildName'],description),
-        "hideAvatar": "0",
-        "btnOrientation": "0",
-        "btns": [
-            {
-                "title": "点击进入测试",
-                "actionURL": open_url_path
-            }
-        ]
-    }
-}
+
     print(download_url_path)
     url = weburl
     data = _news
@@ -74,6 +68,7 @@ class SendDingTalk:
         try:
             hook = ARCConfig.getConfig(TargetSection, "dingTalk_hook")
             current_app_detail = Pgy().get_current_app_detail()
+            # print(current_app_detail)
             sendToDingTalk(hook, current_app_detail)
         except:
             print("❌无法获取到机器人地址！！！")
@@ -86,3 +81,8 @@ class SendDingTalk:
 
 if __name__ == '__main__':
     SendDingTalk()
+
+    # hook = "https://oapi.dingtalk.com/robot/send?access_token=b0d71fd971f6399c3959fb12fe38a185c295d18eeb90b4c990bdf75c5af2124d"
+    # current_app_detail = Pgy().get_current_app_detail()
+    # print(current_app_detail)
+    # sendToDingTalk(hook, current_app_detail)

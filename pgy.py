@@ -100,10 +100,20 @@ class Pgy:
                                  data={'_api_key': api_key})
         json_app_list = json.loads(app_list.text)
         code = json_app_list['code']
-        # print(json_app_list)
+        print(json_app_list)
         if code == 0:
-            app_key = json_app_list['data']['list'][0]['appKey']
-            # print(app_key)
+            list = json_app_list['data']['list']
+            for i, item in enumerate(list):
+                buildName = item['buildName']
+                buildType = item['buildType']
+                if buildType == "1":
+                    buildType = "iOS"
+                else:
+                    buildType = "Android"
+                print("{0}.{1}-{2}".format(i, buildName, buildType))
+            need_index = input("请选择需要发送的项目(0-{0}):\n".format(len(list)-1))
+            app_key = list[int(need_index)]['appKey']
+            print(app_key)
         else:
             print('获取appkey失败')
             return
@@ -113,7 +123,7 @@ class Pgy:
         pgy = requests.post("https://www.pgyer.com/apiv2/app/view",
                             data=pgy_data)
         json_data = json.loads(pgy.text)
-        # print(json_data)
+        print(json_data)
         if code == 0:
             json_content = json_data['data']
             # print("\n获取app详情成功...")
@@ -124,4 +134,6 @@ class Pgy:
 
 
 if __name__ == "__main__":
-    Pgy().get_api_key()
+    # Pgy().get_api_key()
+
+    Pgy().get_current_app_detail()

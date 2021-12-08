@@ -17,6 +17,7 @@ from send_email import SendEmail
 # 5。通知测试用户
 home_path = os.path.expandvars('$HOME')
 
+# xcodebuild -configuration Debug -target Lazy -xcconfig ./Lazy
 
 def get_app_path(project):
     project_name = project
@@ -95,29 +96,37 @@ def showVersion(version):
 
 if __name__ == '__main__':
 
-    args = apa.ArgumentParser(prog="iarchive", description='iOS Application archive command tools', epilog='Information end ')
-    #必要参数
-    args.add_argument("-db",'--dabao', type=str, dest="db", default=None, help="你的项目Target")
+    p = subprocess.Popen('xcodebuild -configuration Debug -workspace Lazy.xcworkspace  -scheme Lazy -xcconfig ./buildFile', shell=True, stdout=subprocess.PIPE)
+    out, err = p.communicate()
+    print("如果有错的话")
+    print(err)
+    for line in out.splitlines():
+        print(line)
 
-    args.add_argument("-sd", '--send', type=str, dest="send_target", help=u"发送目标，例如钉钉机器人:dingTalk,企业微信机器人:weixin")
-
-    args = args.parse_args()
+    # return
+    # args = apa.ArgumentParser(prog="iarchive", description='iOS Application archive command tools', epilog='Information end ')
+    #
+    # args.add_argument("-a", '--archive', type=str, dest="name", default=None, help="your Project Target")
+    #
+    # args.add_argument("-s", '--send', type=str, dest="send_target", help=u"sendTarget--> Ex:dingTalk,weixin")
+    #
+    # args = args.parse_args()
     # print("argparse.args=", args, type(args))
-    # print("name = {0}".format(args.name))
-    d = args.__dict__
+    # # print("name = {0}".format(args.name))
+    # d = args.__dict__
     # print(d)
-    if not "db" in d or d["db"] == None:
-        # print("无效项目Target")
-        pass
-    else:
-        projectName(d["db"])
-        # print("db",d["db"])
-        # pass
-
-    if d["send_target"] == None:
-        # print("无效的发送目标")
-        pass
-    else:
-        sendToTester(d["send_target"])
-        # print("send", d["send_target"])
-        # pass
+    # if not "db" in d or d["db"] == None:
+    #     # print("无效项目Target")
+    #     pass
+    # else:
+    #     projectName(d["db"])
+    #     # print("db",d["db"])
+    #     # pass
+    #
+    # if d["send_target"] == None:
+    #     # print("无效的发送目标")
+    #     pass
+    # else:
+    #     sendToTester(d["send_target"])
+    #     # print("send", d["send_target"])
+    #     # pass
