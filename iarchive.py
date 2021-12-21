@@ -32,7 +32,7 @@ def get_app_path(project):
             if project_name == entry.name.split("-")[0] and entry.is_dir():
                 project_enable = True
                 # print(entry.name)
-                project_path = derive_data + "/" + entry.name + "/Build/Products/Debug-iphoneos"
+                project_path = derive_data + "/" + "/Build/Products/Debug-iphoneos"
                 with os.scandir(project_path) as dir:
                     for file in dir:
                         if project_name + ".app" == file.name:

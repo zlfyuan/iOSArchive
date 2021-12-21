@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="571741e5-7186-410d-984b-654b1e402983" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/send.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/iarchive.py" beforeDir="false" afterPath="$PROJECT_DIR$/iarchive.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pgy.py" beforeDir="false" afterPath="$PROJECT_DIR$/pgy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/send_dingtalk.py" beforeDir="false" afterPath="$PROJECT_DIR$/send_dingtalk.py" afterDir="false" />
-    </list>
+    <list default="true" id="571741e5-7186-410d-984b-654b1e402983" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -243,6 +237,7 @@
       <workItem from="1630908869252" duration="1903000" />
       <workItem from="1630912659384" duration="1609000" />
       <workItem from="1636508635552" duration="1339000" />
+      <workItem from="1639363133547" duration="3000" />
     </task>
     <servers />
   </component>
